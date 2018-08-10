@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.supershop.R;
 import com.supershop.model.User;
@@ -36,7 +35,7 @@ public class LoginActivity extends Activity {
         user = new User();
         userService = new UserService();
         if(SaveSharedPreference.getLoggedStatus(getApplicationContext())) {
-            Intent intent = new Intent(getApplicationContext(), dashboard.class);
+            Intent intent = new Intent(getApplicationContext(), ProductList.class);
             startActivity(intent);
         }
     }
