@@ -14,10 +14,11 @@ import io.reactivex.Flowable;
 
 @Dao
 public interface IUserDAO {
-    @Query("SELECT * FROM users WHERE id=:userid") Flowable<User> getUserById(long userid);
+    @Query("SELECT * FROM users WHERE id=:userid")
+    Flowable<User> getUserById(long userid);
 
-
-    @Query("SELECT * FROM users") Flowable<List<User>> getAllUsers();
+    @Query("SELECT * FROM users")
+    Flowable<List<User>> getAllUsers();
 
     @Insert
     void inserUser(User...users);
