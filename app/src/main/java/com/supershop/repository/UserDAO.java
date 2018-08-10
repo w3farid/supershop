@@ -1,5 +1,7 @@
 package com.supershop.repository;
 
+import android.arch.persistence.room.Dao;
+
 import com.supershop.database.IUserSource;
 import com.supershop.model.User;
 
@@ -7,18 +9,23 @@ import java.util.List;
 
 import io.reactivex.Flowable;
 
-public class UserDAO implements IUserSource {
+
+public class UserDAO implements IUserDAO {
+
     private IUserSource mLocalDataSource;
+
     private static UserDAO mInstance;
 
-    public UserDAO(IUserSource mLocalDataSource){
+    public UserDAO( IUserSource mLocalDataSource ){
         this.mLocalDataSource = mLocalDataSource;
     }
 
-    public static UserDAO getmInstance(IUserSource mLocalDataSource){
-        if (mInstance == null){
-            mInstance = new UserDAO(mLocalDataSource);
+    public static UserDAO getmInstance( IUserSource mLocalDataSource ){
+
+        if ( mInstance == null ){
+            mInstance = new UserDAO( mLocalDataSource );
         }
+
         return mInstance;
     }
 
