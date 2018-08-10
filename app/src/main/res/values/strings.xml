@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">super-shop</string>
+    <string name="loginErrorMessage">You have entered an invalid username or password</string>
 </resources>
