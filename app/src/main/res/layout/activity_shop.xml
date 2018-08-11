@@ -7,17 +7,7 @@
     android:orientation="vertical"
     tools:context=".view.Shop">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Setup Your Account"
-            android:textAlignment="center"
-            android:textFontWeight="400sp"/>
-    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,8 +15,8 @@
         android:orientation="horizontal">
 
         <fragment
-            android:id="@+id/setupAccount"
-            android:name="com.supershop.view.CreateShopFragment"
+            android:name="com.supershop.view.RegistrationFragment"
+            android:id="@+id/setupAccountFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </LinearLayout>

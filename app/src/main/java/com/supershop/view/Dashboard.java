@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.supershop.R;
 
-public class dashboard extends AppCompatActivity {
+public class Dashboard extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

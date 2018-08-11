@@ -34,8 +34,8 @@ public class LoginActivity extends Activity {
         ButterKnife.bind(this);
         user = new User();
         userService = new UserService();
-        if(SaveSharedPreference.getLoggedStatus(getApplicationContext())) {
-            Intent intent = new Intent(getApplicationContext(), Shop.class);
+        if(!SaveSharedPreference.getLoggedStatus(getApplicationContext())) {
+            Intent intent = new Intent(getApplicationContext(), Dashboard.class);
             startActivity(intent);
         }
     }
@@ -47,10 +47,15 @@ public class LoginActivity extends Activity {
         user.setPassword(pass);
         boolean isLogin = userService.isLogin(user, getApplicationContext());
         if(isLogin){
-            Intent intent = new Intent(getApplicationContext(), dashboard.class);
+            Intent intent = new Intent(getApplicationContext(), Dashboard.class);
             startActivity(intent);
         }else
             loginMessage.setText(loginErrorMessage);
 
+    }
+
+    public void createAccount(View view) {
+        Intent intent = new Intent(getApplicationContext(), Shop.class);
+        startActivity(intent);
     }
 }
