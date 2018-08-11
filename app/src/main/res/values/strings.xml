@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">super-shop</string>
     <string name="loginErrorMessage">You have entered an invalid username or password</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

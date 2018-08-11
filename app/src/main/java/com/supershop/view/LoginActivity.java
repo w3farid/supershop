@@ -35,7 +35,7 @@ public class LoginActivity extends Activity {
         user = new User();
         userService = new UserService();
         if(SaveSharedPreference.getLoggedStatus(getApplicationContext())) {
-            Intent intent = new Intent(getApplicationContext(), ProductList.class);
+            Intent intent = new Intent(getApplicationContext(), Shop.class);
             startActivity(intent);
         }
     }
