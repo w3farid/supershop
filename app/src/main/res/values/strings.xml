@@ -26,10 +26,11 @@
     <string name="prompt_shop_user_name">Name</string>
     <string name="prompt_shop_user_username">Username</string>
     <string name="prompt_shop_user_password">Password</string>
-    <string name="create_accout_title">Create your Shop Account</string>
+    <string name="create_accout_title">Create An Account</string>
     <string name="action_sign_in_next">Next</string>
     <string name="gender_male">Male</string>
     <string name="gender_female">Female</string>
     <string name="label_gender">Gender</string>
+    <string name="app_logout">Logout</string>
 
 </resources>

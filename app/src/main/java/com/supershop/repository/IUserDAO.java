@@ -10,18 +10,19 @@ import com.supershop.model.User;
 
 import java.util.List;
 
-import io.reactivex.Flowable;
-
 @Dao
 public interface IUserDAO {
     @Query("SELECT * FROM users WHERE id=:userid")
-    Flowable<User> getUserById(long userid);
+    User getUserById(long userid);
+
+    @Query("SELECT * FROM users WHERE username=:username")
+    User getUserByUsername(String username);
 
     @Query("SELECT * FROM users")
-    Flowable<List<User>> getAllUsers();
+    List<User> getAllUsers();
 
     @Insert
-    void inserUser(User...users);
+    void inserUser(User... users);
 
     @Update
     void updateUser(User...users);

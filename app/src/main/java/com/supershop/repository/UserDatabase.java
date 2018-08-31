@@ -7,23 +7,24 @@ import android.content.Context;
 
 import com.supershop.model.User;
 
-import static com.supershop.repository.UserDatabase.DATABASE_VERSION;
-
-@Database(entities = User.class, version = DATABASE_VERSION)
+@Database(entities = {User.class}, version = 1)
 public abstract class UserDatabase extends RoomDatabase {
-    public static final int DATABASE_VERSION = 1;
-    public static final String  DATABASE_NAME = "EDMT-Super-Shop";
+    private static UserDatabase INSTANCE;
 
-    public abstract IUserDAO userDAO();
-
-    private static UserDatabase mInstance;
-
-    public static UserDatabase getmInstance(Context context){
-        if(mInstance == null){
-            mInstance = Room.databaseBuilder(context, UserDatabase.class, DATABASE_NAME)
-                    .fallbackToDestructiveMigration()
-                    .build();
+    public abstract IUserDAO userDao();
+    public static UserDatabase getInstance(Context context) {
+        if (INSTANCE == null) {
+            INSTANCE =
+                    Room.databaseBuilder(context.getApplicationContext(),UserDatabase.class, "user-database")
+                            // allow queries on the main thread.
+                            // Don't do this on a real app! See PersistenceBasicSample for an example.
+                            .allowMainThreadQueries()
+                            .build();
         }
-        return mInstance;
+        return INSTANCE;
+    }
+
+    public static void destroyInstance() {
+        INSTANCE = null;
     }
 }

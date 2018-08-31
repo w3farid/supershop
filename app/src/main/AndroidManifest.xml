@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.ProductList" />
-        <activity android:name=".view.Shop" />
+        <activity android:name=".view.AccoutRegistration"></activity>
     </application>
 
 </manifest>
