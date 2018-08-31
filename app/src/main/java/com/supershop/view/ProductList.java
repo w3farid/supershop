@@ -1,5 +1,6 @@
 package com.supershop.view;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,34 +10,30 @@ import android.widget.Toast;
 
 import com.supershop.R;
 import com.supershop.adapter.ProductListAdapter;
+import com.supershop.model.Product;
+import com.supershop.service.IProductService;
+import com.supershop.service.ProductService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProductList extends AppCompatActivity {
 
     ListView list;
 
-    String[] maintitle ={
-            "Title 1","Title 2",
-            "Title 3","Title 4",
-            "Title 5",
-    };
 
-    String[] subtitle ={
-            "Sub Title 1","Sub Title 2",
-            "Sub Title 3","Sub Title 4",
-            "Sub Title 5",
-    };
-
-    Integer[] imgid={
-            R.drawable.ibackslogo,R.drawable.ibackslogo,
-            R.drawable.ibackslogo,R.drawable.ibackslogo,
-            R.drawable.ibackslogo,
-    };
-
+    private IProductService productService;
+    private Context mContext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_list);
-        ProductListAdapter adapter=new ProductListAdapter(this, maintitle, subtitle,imgid);
+        if (mContext == null)
+            mContext = this;
+        productService = new ProductService();
+        List<Product> productList = productService.getAll(mContext);
+
+        ProductListAdapter adapter = new ProductListAdapter(this, (ArrayList<Product>) productList);
         list=(ListView)findViewById(R.id.list);
         list.setAdapter(adapter);
 
