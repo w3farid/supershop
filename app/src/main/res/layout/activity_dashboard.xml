@@ -5,12 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.dashboard"
+    tools:context=".view.Dashboard"
     android:orientation="vertical"
     android:padding="10dp"
     android:background="#fcfcfc"
     android:gravity="center"
     android:id="@+id/ll">
+
     <LinearLayout
         android:clipToPadding="false"
         android:gravity="center"
@@ -33,14 +34,16 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="@drawable/cerclebackgroundpurple"
-                    android:src="@drawable/ic_attach_money_black_24dp"
+                    android:src="@drawable/ic_storage_black_24dp"
+                    android:onClick="goProductList"
                     android:padding="10dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"
-                    android:text="Banking"/>
+                    android:onClick="goProductList"
+                    android:text="Product List"/>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -50,8 +53,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Check your bank activities"
+                    android:text="Select product and selling"
                     android:padding="5dp"
+                    android:onClick="goProductList"
                     android:textColor="@android:color/darker_gray"/>
 
             </LinearLayout>
@@ -114,6 +118,7 @@
                 android:orientation="vertical"
                 android:gravity="center">
                 <ImageView
+                    android:id="@+id/ds_add_product"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="@drawable/cerclebackgroundgreen"
@@ -124,7 +129,7 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"
-                    android:text="Add"/>
+                    android:text="Add product"/>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -207,14 +212,15 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="@drawable/cerclebackgroundpurple"
-                    android:src="@drawable/ic_wifi_black_24dp"
-                    android:padding="10dp"/>
+                    android:src="@mipmap/logout"
+                    android:onClick="logout"
+                    android:padding="10dp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"
-                    android:text="Add"/>
+                    android:text="@string/app_logout"/>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"

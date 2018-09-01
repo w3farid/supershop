@@ -48,6 +48,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Create accunt"
+        android:id="@+id/goToAccountSetupPage"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:textColor="#FFF"
+        android:onClick="createAccount"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Forgot password?"
         android:id="@+id/loginMessage"
         android:layout_gravity="center_horizontal"

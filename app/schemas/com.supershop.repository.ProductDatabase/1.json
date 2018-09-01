@@ -1,0 +1,63 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "5712f64d756190b0cf8b8db8cc5a9036",
+    "entities": [
+      {
+        "tableName": "products",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `product_name` TEXT, `men` TEXT, `women` TEXT, `female` TEXT, `productImage` BLOB)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "productName",
+            "columnName": "product_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "men",
+            "columnName": "men",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "women",
+            "columnName": "women",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "female",
+            "columnName": "female",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "productImage",
+            "columnName": "productImage",
+            "affinity": "BLOB",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"5712f64d756190b0cf8b8db8cc5a9036\")"
+    ]
+  }
+}

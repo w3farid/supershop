@@ -1,4 +1,43 @@
 <resources>
     <string name="app_name">super-shop</string>
     <string name="loginErrorMessage">You have entered an invalid username or password</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="shop_user_registration_title">Shop User Registation Form</string>
+    <string name="title_activity_test">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="shop_user_name">Name</string>
+    <string name="shop_user_email">Email</string>
+    <string name="prompt_shop_user_mobile">Contact No.</string>
+    <string name="prompt_shop_user_email">Email</string>
+    <string name="prompt_shop_user_name">Name</string>
+    <string name="prompt_shop_user_username">Username</string>
+    <string name="prompt_shop_user_password">Password</string>
+    <string name="create_accout_title">Create An Account</string>
+    <string name="action_sign_in_next">Next</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+    <string name="label_gender">Gender</string>
+    <string name="app_logout">Logout</string>
+    <string name="et_string_product_name">Add A Product</string>
+    <string name="prompt_product_name">Product Name</string>
+    <string name="prompt_add_product_type">Product Type</string>
+    <string name="label_add_product_category">Category</string>
+    <string name="string_add_product_cat_men">Men</string>
+    <string name="string_add_product_cat_women">Women</string>
+    <string name="btn_add_product">Add</string>
+
 </resources>

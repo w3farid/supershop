@@ -3,50 +3,56 @@ package com.supershop.service;
 import android.content.Context;
 import android.text.TextUtils;
 
-import com.supershop.database.IUserSource;
 import com.supershop.model.User;
+import com.supershop.repository.UserDatabase;
 import com.supershop.utils.SaveSharedPreference;
 
 import java.util.List;
 
 public class UserService implements IUserService {
 
-    @Override
-    public void insertData(User user) {
 
+
+    @Override
+    public void insertData(Context mContext, User user) {
+        UserDatabase.getInstance(mContext).userDao().inserUser(user);
     }
 
     @Override
-    public void updateData(User user) {
-
+    public void updateData(Context mContext, User user) {
+        UserDatabase.getInstance(mContext).userDao().inserUser(user);
     }
 
     @Override
-    public void deleteById(Long id) {
-
+    public void deleteById(Context mContext, User user) {
+        UserDatabase.getInstance(mContext).userDao().deleteUser(user);
     }
 
     @Override
-    public User getById(Long id) {
-        return null;
+    public User getById(Context mContext, User user) {
+
+        return UserDatabase.getInstance(mContext).userDao().getUserById(user.getId());
     }
 
     @Override
-    public List<User> getAll() {
-        String a = "ab";
-        return null;
+    public List<User> getAll(Context mContext) {
+        return UserDatabase.getInstance(mContext).userDao().getAllUsers();
     }
 
     @Override
-    public boolean isLogin(User user, Context context) {
-        boolean isLogin = validUsername(user.getUsername()) && validPassword(user.getPassword());
+    public boolean isLogin(User user, Context mContext) {
+        String uName = user.getUsername();
+        String uPass = user.getPassword();
+        if (TextUtils.isEmpty(uName) || TextUtils.isEmpty(uPass))
+            return false;
 
-        if (isLogin){
-            SaveSharedPreference.setLoggedIn(context, true);
-            return isLogin;
+        User dUser = UserDatabase.getInstance(mContext).userDao().getUserByUsername(uName);
+        if (dUser != null){
+            SaveSharedPreference.setLoggedIn(mContext, true);
+            return true;
         }else {
-            SaveSharedPreference.setLoggedIn(context, false);
-            return isLogin;
+            SaveSharedPreference.setLoggedIn(mContext, false);
+            return false;
         }
 
     }
